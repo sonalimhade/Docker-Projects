@@ -1,0 +1,14 @@
+#Create base image
+FROM openjdk:11
+
+#Create working directory for app
+WORKDIR app/
+
+#copy app from your system to working/current directory of container
+COPY Hello.java .
+
+#Compile the code
+RUN javac Hello.java
+
+#Run java compiled code
+CMD ["java","Hello"]
